@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - OMF</title>
+  <link rel="icon" type="image/png" href="Imagens IMF/4bdfe399-7427-40ea-b1e7-5084b0cdb8a2.jpg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #2c1e6c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .login-container:hover {
+      box-shadow: 0 14px 40px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      color: #7f2bc4;
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #7f2bc4;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      padding: 12px 15px;
+      border: 2px solid #b380e6;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      outline-offset: 2px;
+      outline-color: transparent;
+      width: 100%;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #7f2bc4;
+      outline-color: #7f2bc4;
+    }
+
+    button {
+      background-color: #7f2bc4;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 14px;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(127,43,196,0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #a241cc;
+      transform: scale(1.05);
+    }
+
+    .forgot-password {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #7f2bc4;
+      cursor: pointer;
+      text-decoration: underline;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    .forgot-password:hover {
+      color: #a241cc;
+    }
+
+    @media (max-width: 420px) {
+      .login-container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container" role="main" aria-label="Área de login do OMF">
+    <h2>Login</h2>
+    <form action="#" method="POST" novalidate>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" autocomplete="email" />
+      
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" required placeholder="Digite sua senha" autocomplete="current-password" />
+      
+      <button type="submit">Entrar</button>
+    </form>
+    <button type="button" id="btnCriarConta" 
+        style="
+          background-color: #f3c012; 
+          color: #2c1e6c; 
+          font-weight: 700; 
+          font-size: 1.1rem; 
+          padding: 14px; 
+          border: none; 
+          border-radius: 9999px; 
+          cursor: pointer; 
+          box-shadow: 0 6px 15px rgba(243, 192, 18, 0.5); 
+          width: 100%; 
+          margin-top: 12px;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+        "
+        onmouseover="this.style.backgroundColor='#e0ad00'; this.style.transform='scale(1.05)';"
+        onmouseout="this.style.backgroundColor='#f3c012'; this.style.transform='scale(1)';">
+  Criar Conta
+</button>
+
+    <div class="forgot-password" tabindex="0" role="button"
+     aria-label="Esqueci minha senha"
+     onclick="window.location.href='senha.html'">
+      Esqueci minha senha
+    </div>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+  
+    function validarEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  
+    function validarSenha(senha) {
+      if (senha.length < 8) return false;
+      if (senha.trim() !== senha) return false; 
+      if (!/[a-zA-Z]/.test(senha)) return false; 
+      if (!/\d/.test(senha)) return false; 
+      return true;
+    }
+  
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const email = emailInput.value.trim();
+      const senha = passwordInput.value;
+
+      if (!validarEmail(email)) {
+        alert('Por favor, insira um e-mail válido.');
+        emailInput.focus();
+        return;
+      }
+
+      if (!validarSenha(senha)) {
+        alert('Senha inválida. Deve ter pelo menos 8 caracteres, incluir letras e números, e não pode começar ou terminar com espaço.');
+        passwordInput.focus();
+        return;
+      }
+
+      // Redireciona para conta do candidato após validação bem-sucedida
+      window.location.href = 'conta-candidato.html';
+    });
+
+    document.getElementById('btnCriarConta').addEventListener('click', () => {
+      window.location.href = 'cadastro.html';
+    });
+  </script>
+  
+
+</body>
+</html>
