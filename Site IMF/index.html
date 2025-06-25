@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instituto de Matemática Fibonacci</title>
+  <link rel="icon" type="image/png" href="Imagens IMF/4bdfe399-7427-40ea-b1e7-5084b0cdb8a2.jpg"/>  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+body {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+body.visible {
+  opacity: 1;
+}
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #f3f4f6;
+      color: #1e1b2e;
+      font-family: sans-serif;
+    }
+
+    header {
+      background-color: #a241cc;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+    }
+
+    header h1 {
+      color: #f8effc;
+      font-size: 1.875rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #f8effc;
+      font-size: 1.125rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.7s, transform 0.7s ease;
+    }
+
+    nav a:hover {
+      color: #f8effc;
+      transform: scale(1.25);
+    }
+
+    nav a.button-inscreva {
+      background-color: #7e22ce;
+      color: white;
+      padding: 0.5rem 1.25rem;
+      font-size: 1.1em;
+      font-weight: 600;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(7, 0, 14, 0.3);
+      transition: background-color 0.7s ease, transform 0.7s ease;
+    }
+
+    nav a.button-inscreva:hover {
+      background-color: #6b21a8;
+      transform: scale(1.25);
+    }
+
+    section.hero {
+      background-color: #ffffff;
+      padding: 5rem 0;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero .circle1, .hero .circle2 {
+      position: absolute;
+      border-radius: 9999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero .circle1 {
+      width: 12rem;
+      height: 12rem;
+      background-color: #c084dc;
+      top: 2rem;
+      left: -2.5rem;
+      opacity: 0.4;
+    }
+
+    .hero .circle2 {
+      width: 8rem;
+      height: 8rem;
+      background-color: #a241cc;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      opacity: 0.3;
+    }
+
+    .hero h2 {
+      color: #a241cc;
+      font-size: 2.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      transition: transform 0.7s ease;
+      cursor: default;
+    }
+
+    .hero h2:hover {
+      transform: scale(1.17);
+    }
+
+    .hero p {
+      color: #374151;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      max-width: 40rem;
+      margin: 0 auto;
+    }
+
+    .sobre, .olimpiada, .contato {
+      background-color: #f3f4f6;
+      padding: 5rem 0;
+    }
+
+    .box {
+      background-color: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+
+    .box h3, .box h4 {
+      color: #a241cc;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      transition: transform 0.7s ease;
+      cursor: default;
+    }
+
+    .box h3:hover, .box h4:hover {
+      transform: scale(1.17);
+    }
+
+    .box p {
+      color: #374151;
+      line-height: 1.625;
+    }
+
+    .logo-container {
+      width: 16rem;
+      height: 16rem;
+      background-color: #ffffff;
+      border-radius: 9999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .logo-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 1000px;
+      transition: transform 0.8s ease;
+      cursor: pointer;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.25);
+    }
+
+    .contato a {
+      display: inline-block;
+      background-color: #a241cc;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s;
+    }
+
+    .contato a:hover {
+      background-color: #8619aa;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #a241cc, #6b21a8);
+      color: #f3e8ff;
+      padding: 2rem 1rem;
+      border-top-left-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+      box-shadow: 0 -10px 25px rgba(107, 33, 168, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.05em;
+    }
+
+    footer .footer-content {
+      max-width: 7xl;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+
+    footer .footer-content p {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    footer .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    footer .social-icons a {
+      color: #f3e8ff;
+      font-size: 1.25rem;
+      transition: color 0.7s, transform 0.7s ease;
+    }
+
+    footer .social-icons a:hover {
+      color: #d8b4fe;
+      transform: scale(1.3);
+    }
+
+    pre, code {
+      background-color: #eef2ff;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      display: block;
+      overflow-x: auto;
+      color: #1e1b2e;
+      font-family: monospace;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <h1>Instituto de Matemática Fibonacci</h1>
+      <nav class="flex items-center gap-6 flex-wrap justify-center">
+        <a href="#sobre">Sobre</a>
+        <a href="#olimpiada">Olimpíada</a>
+        <a href="#contato">Contato</a>
+        <a href="formulario.html" class="button-inscreva">Inscreva-se</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2>A matemática inspira e transforma</h2>
+      <p>Inove, aprenda e desafie seus limites no Instituto
+         de Matemática Fibonacci.
+
+      </p>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="box">
+          <h3>Sobre o Instituto</h3>
+          <p>Fundado inicialmente
+            para promover a matemática,
+            o IMF tornou-se um espaço totalmente
+             dedicado à educação 
+             de qualidade, acessível e 
+            envolvente. Mais que cogitar fórmulas,
+            estimulamos a busca pelo conhecimento e 
+            o fascínio quanto a beleza dos números.
+            <br><br>
+            Com sede em Taubaté - SP, o Instituto Social
+            - ainda em desenvolvimento - conta com Universidades
+            parceiras que ajudam ainda mais no processo de 
+            democratização do processo de ensino por todo 
+            o território nacional. 
+            <br><br>
+            O nosso objetivo é incentivar jovens 
+            estudantes a se interessarem e se dedicarem ao 
+            estudo da matemática, além de 
+            desenvolver suas habilidades e conhecimentos 
+            nessa ciência. Não perca a chance de participar do projeto
+            e demonstrar sua paixão pela área das exatas!
+
+        </div>
+        <div class="flex justify-center">
+          <div class="logo-container">
+            <img style="border: 10px solid #d197dd;"
+            src="../Site IMF/Imagens IMF/4bdfe399-7427-40ea-b1e7-5084b0cdb8a2.jpg" alt="Logo IMF">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="olimpiada" class="olimpiada" style="padding-top: 0;">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-6"
+       style="color: #a241cc; font-size: 2.3em;">
+       Conheça nossa Olimpíada! 
+    </h3>
+         <br>
+          <img src="../Site IMF/Imagens IMF/logo_sem_fundo.png" 
+          alt="Logo" style="text-align: center; height: 350px; margin: auto;">
+         <br>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="box">
+          <h4>Desafios Criativos</h4>
+          <p>Questões que estimulam o raciocínio e vão
+             além do conteúdo acadêmico usual.</p>
+        </div>
+        <div class="box">
+          <h4>Certificados & Premiação</h4>
+          <p>Reconhecimento para os melhores colocados em diversas categorias.</p>
+        </div>
+        <div class="box">
+          <h4>Aberta a Todos</h4>
+          <p>Para estudantes de todo o Brasil, sem restrições ou taxas de premiação</p>
+        </div>
+      </div>
+      <br><br>
+      <a href="regulamento.html"
+        class="inline-block bg-[#a241cc] text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg transition duration-500 ease-in-out transform hover:bg-[#8619aa] hover:scale-110">
+        📄 Acesse o Regulamento
+      </a>
+    </div>
+  </section>
+   
+  <section id="contato" class="contato" style="padding-top: 0;">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-4" style="color: #a241cc;">Fale com a gente</h3>
+      <p class="mb-6" style="color: #374151;">Quer se inscrever, colaborar ou tirar dúvidas? Envie um e-mail!</p>
+      <a href="mailto:contato@imf.org">contato.imf@outlook.com.br</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content max-w-7xl mx-auto px-6">
+      <p>© 2025 Instituto de Matemática Fibonacci. Todos os direitos reservados.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.243l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.312h3.587l-.467 3.622h-3.12V24h6.116c.728 0 1.324-.597 1.324-1.324V1.325C24 .597 23.403 0 22.675 0z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M24 4.557a9.83 9.83 0 01-2.828.775 4.933 4.933 0 002.165-2.724 9.864 9.864 0 01-3.127 1.195 4.918 4.918 0 00-8.38 4.482 13.95 13.95 0 01-10.141-5.144 4.917 4.917 0 001.523 6.574 4.9 4.9 0 01-2.228-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.922 4.922 0 004.59 3.417A9.868 9.868 0 010 21.542a13.945 13.945 0 007.548 2.212c9.058 0 14.01-7.512 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0024 4.557z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/institutomatematicofibonacci/" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.75 1.5a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+     window.addEventListener('load', () => {
+  document.body.classList.add('visible');
+});
+  </script>
+  
+
+</body>
+</html>

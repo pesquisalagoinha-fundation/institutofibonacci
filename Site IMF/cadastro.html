@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Criar Conta - OMF</title>
+  <link rel="icon" type="image/png" href="Imagens IMF/4bdfe399-7427-40ea-b1e7-5084b0cdb8a2.jpg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+      background-color: #f4f4f4;
+      color: #2c1e6c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    body.visible {
+      opacity: 1;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px 25px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #7f2bc4;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #a241cc;
+      letter-spacing: 0.02em;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: 1.8px solid #b380e6;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #2c1e6c;
+      transition: border-color 0.3s ease;
+    }
+
+    form input:focus {
+      outline: none;
+      border-color: #7f2bc4;
+      box-shadow: 0 0 6px #b380e6;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background-color: #7f2bc4;
+      color: white;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(127, 43, 196, 0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #6b21a8;
+      transform: scale(1.05);
+    }
+
+    .login-link {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #7f2bc4;
+    }
+
+    .login-link a {
+      color: #a241cc;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .login-link a:hover {
+      color: #6b21a8;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Criar Conta</h1>
+    <form id="createAccountForm" novalidate>
+      <label for="username">Nome de usuário</label>
+      <input type="text" id="username" name="username" placeholder="Digite seu nome" required minlength="3" />
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="endereço@email.com" required />
+
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" placeholder="Sua senha" required minlength="6" />
+
+      <label for="confirmPassword">Confirme a senha</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        placeholder="Digite novamente a senha"
+        required
+        minlength="6"
+      />
+
+      <button type="submit">Criar Conta</button>
+    </form>
+
+    <div class="login-link">
+      Já tem uma conta? <a href="login.html">Faça login aqui</a>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('visible');
+    });
+
+    const form = document.getElementById('createAccountForm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const username = form.username.value.trim();
+      const email = form.email.value.trim();
+      const password = form.password.value;
+      const confirmPassword = form.confirmPassword.value;
+
+      if (username.length < 3) {
+        alert('O nome do usuário deve ter ao menos 3 caracteres.');
+        form.username.focus();
+        return;
+      }
+
+      if (!email.includes('@') || email.length < 5) {
+        alert('Por favor, insira um e-mail válido.');
+        form.email.focus();
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('A senha deve ter ao menos 6 caracteres.');
+        form.password.focus();
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('As senhas não coincidem.');
+        form.confirmPassword.focus();
+        return;
+      }
+
+      // Redireciona para a página da conta do candidato
+      window.location.href = 'conta-candidato.html';
+    });
+  </script>
+</body>
+</html>

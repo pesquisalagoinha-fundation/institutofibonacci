@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recuperar Senha - OMF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #2c1e6c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 15px;
+    }
+
+    .recover-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 430px;
+      text-align: center;
+    }
+
+    .recover-container:hover {
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      color: #7f2bc4;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #7f2bc4;
+    }
+
+    input[type="email"] {
+      padding: 12px 15px;
+      border: 2px solid #b380e6;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      outline-offset: 2px;
+      width: 100%;
+    }
+
+    input[type="email"]:focus {
+      border-color: #7f2bc4;
+    }
+
+    button {
+      background-color: #7f2bc4;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 14px;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(127, 43, 196, 0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #a241cc;
+      transform: scale(1.05);
+    }
+
+    .back-link {
+      margin-top: 20px;
+      display: inline-block;
+      color: #7f2bc4;
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #a241cc;
+    }
+
+    @media (max-width: 480px) {
+      .recover-container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="recover-container">
+    <h2>Esqueceu sua senha?</h2>
+    <p>Insira seu e-mail abaixo e enviaremos um link para redefinição de senha.</p>
+
+    <form action="#" method="POST" onsubmit="handleSubmit(event)">
+      <label for="email">E-mail de cadastro</label>
+      <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" autocomplete="email" />
+      <button type="submit">Enviar link de recuperação</button>
+    </form>
+
+    <div class="back-link" onclick="window.location.href='login.html'">← Voltar para o login</div>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Por favor, insira um e-mail válido.");
+        return;
+      }
+
+      // Simulação de envio de link (backend será implementado futuramente)
+      alert("Um link de redefinição de senha foi enviado para " + email + "");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>

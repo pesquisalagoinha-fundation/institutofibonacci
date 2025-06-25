@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inscreva-se - Instituto de Matemática Fibonacci</title>
+  <link rel="icon" type="image/png" href="Imagens IMF/4bdfe399-7427-40ea-b1e7-5084b0cdb8a2.jpg"/>
+ <style>
+
+body {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+body.visible {
+  opacity: 1;
+}
+
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #7e22ce, #a241cc);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      flex-direction: column;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 3px 8px rgba(126, 34, 206, 0.7);
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 3rem;
+      max-width: 480px;
+      line-height: 1.5;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    }
+    .btn-inscrever {
+      background: linear-gradient(135deg, #a241cc, #7e22ce);
+      padding: 1rem 3rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(126, 34, 206, 0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-inscrever:hover, .btn-inscrever:focus {
+      background: linear-gradient(135deg, #7e22ce, #a241cc);
+      box-shadow: 0 15px 40px rgba(126, 34, 206, 0.8);
+      transform: scale(1.05);
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Participe da Olimpíada Fibonacci!</h1>
+  <p>Clique no botão abaixo para se inscrever e garantir sua participação.</p>
+  <a 
+    href="candidato.html"  
+    rel="noopener noreferrer" 
+    class="btn-inscrever"
+  >
+    Inscreva-se
+  </a>
+
+  <script>
+    window.addEventListener('load', () => {
+ document.body.classList.add('visible');
+});
+ </script>
+ 
+</body>
+</html>
