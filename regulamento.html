@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regulamento - Olimpíada OMF</title>
+  <link rel="icon" type="image/png" href="Imagens IMF/4bdfe399-7427-40ea-b1e7-5084b0cdb8a2.jpg"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+body {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+body.visible {
+  opacity: 1;
+}
+
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #f3f4f6;
+      color: #1e1b2e;
+      font-family: sans-serif;
+    }
+
+    /* Header atualizado */
+    header {
+      background-color: #a241cc;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+    }
+    header h1 {
+      color: #f8effc;
+      font-size: 1.875rem;
+      font-weight: bold;
+    }
+    nav a {
+      color: #f8effc;
+      font-size: 1.125rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.7s, transform 0.7s ease;
+    }
+    nav a:hover {
+      color: #f8effc;
+      transform: scale(1.25);
+    }
+    nav a.button-inscreva {
+      background-color: #7e22ce;
+      color: white;
+      padding: 0.5rem 1.25rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(7, 0, 14, 0.3);
+      transition: background-color 0.7s ease, transform 0.7s ease;
+      margin-left: 0; /* remove gap antes do botão */
+    }
+    nav a.button-inscreva:hover {
+      background-color: #6b21a8;
+      transform: scale(1.25);
+    }
+
+    /* Seção Regulamento */
+    section {
+      position: relative;
+      padding: 6rem 1.5rem;
+    }
+    section .circle1 {
+      position: absolute;
+      width: 8rem; height: 8rem;
+      background-color: rgba(162, 65, 204, 0.1);
+      border-radius: 50%;
+      top: 1rem; left: -2rem;
+    }
+    section .circle2 {
+      position: absolute;
+      width: 10rem; height: 10rem;
+      background-color: rgba(194, 132, 220, 0.1);
+      border-radius: 50%;
+      bottom: 2rem; right: -3rem;
+    }
+    h2 {
+      background: linear-gradient(90deg, #a241cc, #c084dc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .regulamento-box {
+      background-color: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      padding: 3rem 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .regulamento-box h3 {
+      font-size: 1.5rem;
+      color: #a241cc;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    .regulamento-box h3::before {
+      content: '';
+      position: absolute;
+      width: 3rem; height: 0.25rem;
+      background-color: #a241cc;
+      bottom: -0.25rem; left: 0;
+      border-radius: 0.125rem;
+    }
+    .regulamento-box p,
+    .regulamento-box li {
+      color: #374151;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .regulamento-box ul {
+      margin-left: 1.5rem;
+      list-style-type: disc;
+    }
+
+    /* Rodapé */
+    footer {
+      background: linear-gradient(135deg, #a241cc, #6b21a8);
+      color: #f3e8ff;
+      padding: 2rem 1rem;
+      border-top-left-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+      box-shadow: 0 -10px 25px rgba(107, 33, 168, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.9rem;
+      align-items: center;
+    }
+    .footer-content {
+      max-width: 1120px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-content p {
+      margin: 0;
+      font-weight: 500;
+    }
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+    .social-icons a {
+      color: #f3e8ff;
+      font-size: 1.25rem;
+      transition: color 0.7s, transform 0.7s ease;
+    }
+    .social-icons a:hover {
+      color: #d8b4fe;
+      transform: scale(1.3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+  <br>
+      <nav class="flex items-center gap-6 flex-wrap justify-center">
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#olimpiada">Olimpíada</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="formulario.html" class="button-inscreva">Inscreva-se</a>
+    </nav>
+    <br>
+  </div>
+</header>
+
+<div class="my-12">
+    <a href="../Site IMF/Imagens IMF/Regulamento_OFICIAL_OMF_2025_Estilizado_Colorido (1).pdf" download
+      target="_blank" 
+    class="block max-w-max mx-auto px-6 py-3 bg-purple-300 text-purple-900 font-semibold rounded-lg shadow-md transition-colors hover:bg-purple-400 hover:text-white">
+       Clique aqui para acessar o regulamento (PDF)
+    </a>
+  </div>
+
+  <section>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <h2 style="font-size: 1.4em;">Regulamento da Olimpíada IMF</h2>
+    <div class="regulamento-box">
+      <h3><em>1. Objetivo</em></h3>
+      <p>A Olimpíada IMF de Matemática tem como objetivo estimular o interesse pela matemática, promover o raciocínio lógico e identificar talentos em todo o Brasil.</p>
+
+      <h3><em>2. Participação</em></h3>
+      <p>A Olimpíada de Matemática Fibonacci é aberta a estudantes matriculados no 9º do Ensino Fundamental e Ensino Médio de escolas públicas e privadas de todo o Brasil.</p>
+
+      <h3><em>3. Inscrições</em></h3>
+      <p>As inscrições devem ser realizadas exclusivamente através do site oficial do IMF dentro do prazo estipulado no calendário.</p>
+      <ul>
+        <li>Taxa única de R$ 12,00 (doze reais) por participante.</li>
+      </ul>
+      <p>Os estudantes serão divididos em dois níveis:</p>
+      <ul>
+        <li><em>Nível Phi</em>: destinados a estudantes do 9º do Ensino Fundamental e 1º do Ensino Médio.</li>
+        <li><em>Nível Bonacci</em>: destinados a estudantes do 2º e 3º do Ensino Médio.</li>
+      </ul>
+
+      <h3><em>4. Etapas</em></h3>
+      <ul>
+        <li><strong>Primeira Fase:</strong> Formato online com 22 questões de múltipla escolha; duração de 80 minutos; pontuação de 3, 4 ou 5 pontos.</li>
+        <li><strong>Segunda Fase:</strong> Formato online com 4 questões dissertativas; duração de 60 minutos; 8 pontos por questão justificada e correta.</li>
+      </ul>
+
+      <h3><em>5. Critérios de Classificação</em></h3>
+      <ul>
+        <li><em>Primeira Fase</em>: os 20% com melhor pontuação – por nível – serão classificados para a Segunda Fase.</li>
+        <li><em>Segunda Fase</em>: os 20% com melhor pontuação – por nível – estarão sujeitos a premiação.</li>
+      </ul>
+      <p><strong>Adendo:</strong> A pontuação é acumulativa; a nota final é a soma das notas obtidas nas duas fases.</p>
+
+      <h3><em>6. Critérios de Desclassificação:</em></h3>
+      <p>• Inscrições com dados incorretos, incompletos ou falsos também acarretarão desclassificação.
+        <br><br>• O não cumprimento dos prazos estipulados no calendário oficial poderá resultar em
+        desclassificação automática
+        <br><br>• O participante será desclassificado caso utilize qualquer meio fraudulento para obter
+        vantagem durante a realização das provas: inteligência artificial, calculadoras, anotações
+        externas ou quaisquer tipo de consulta não autorizada durante as etapas online são
+        expressamente proibidas.</p>
+
+      <h3><em>7. Premiação</em></h3>
+      <p>Serão concedidos certificados de participação a todos os inscritos. Alunos com medalha poderão solicitar a medalha física no Portal do Candidato. Camisetas serão concedidas a estudantes destaques.</p>
+
+      <h3><em>8. Disposições Gerais</em></h3>
+      <p>Ao se inscrever, o participante concorda com todos os termos deste regulamento. Casos omissos serão resolvidos pela comissão organizadora do IMF.</p>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content">
+      <p style="font-size: 1.2em;" 
+      >© 2025 Instituto de Matemática Fibonacci. Todos os direitos reservados.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.243l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.312h3.587l-.467 3.622h-3.12V24h6.116c.728 0 1.324-.597 1.324-1.324V1.325C24 .597 23.403 0 22.675 0z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M24 4.557a9.83 9.83 0 01-2.828.775 4.933 4.933 0 002.165-2.724 9.864 9.864 0 01-3.127 1.195 4.918 4.918 0 00-8.38 4.482 13.95 13.95 0 01-10.141-5.144 4.917 4.917 0 001.523 6.574 4.9 4.9 0 01-2.228-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.922 4.922 0 004.59 3.417A9.868 9.868 0 010 21.542a13.945 13.945 0 007.548 2.212c9.058 0 14.01-7.512 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0024 4.557z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/institutomatematicofibonacci/" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.75 1.5a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    window.addEventListener('load', () => {
+ document.body.classList.add('visible');
+});
+ </script>
+ 
+</body>
+</html>
